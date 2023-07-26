@@ -1,3 +1,13 @@
+# kata-front-angular
+Test Technique (Effy)
+ 
+Important : Au début, j'ai opté pour un store géré par un BehaviorSubject. j'ai laissé le service :
+https://github.com/obSoftMind/kata-front-angular/tree/master/src/app/services
+
+Au final, j'ai utilsé NgRx, donc le service en question n'est pas utilisé dans l'application. 
+
+Pour les test : j'ai juste lancé ng test est corrigé les tests qui ne passe pas
+
 # WebApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
@@ -25,5 +35,4 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-# kata-front-angular
-Test Technique (Effy)
+
