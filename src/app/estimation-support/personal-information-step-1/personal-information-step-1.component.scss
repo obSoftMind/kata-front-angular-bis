@@ -1,0 +1,62 @@
+@import '../../../styles.scss';
+
+.personal-Information-form {
+  display: flex;
+  flex-direction: column;
+  @include absCenter;
+  width: 26%;
+  height: 56%;
+  background-color: #abcce23d;
+  border-radius: 0.8rem;
+  padding: 2rem;
+
+  @include respond(desktop) {
+    width: 30%;
+    height: 82%;
+    padding: 0 2rem;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.personal-Information-form div {
+  margin: 1.5rem 0;
+}
+.personal-Information-form div:last-of-type {
+  display: flex;
+  justify-content: end;
+}
+.personal-Information-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.personal-Information-form .form-input {
+  padding: 0.8rem;
+  width: 100%;
+}
+.btn-primary {
+  color: white;
+  background-color: #30336b;
+  border: none;
+  border-radius: .3em;
+  font-weight: bold;
+  width: 25%;
+  padding: 0.8rem 1.2rem;
+}
+.btn-primary:hover {
+  background-color: #30339b;
+}
+.btn-disable {
+  color: #30336b;
+  background-color: #4c4f5052;
+  border: none;
+  border-radius: .3rem;
+  font-weight: bold;
+  width: 25%;
+  padding: 0.8rem 1.2rem;
+}
+.has-error,
+.has-error:focus {
+  outline: none !important;
+  border: 1px solid red;
+}

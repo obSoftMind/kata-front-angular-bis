@@ -1,0 +1,52 @@
+<ng-container>
+    <form 
+        [formGroup]="projectDetailsStep2Form" 
+        (ngSubmit)="onSubmitUserInfoProject()"
+        class="project-details-form">
+        <div>
+            <label for="ownerOrTenant"> Propriétaire ou locataire</label>
+            <select name="ownerOrTenant" id="ownerOrTenant" formControlName="ownerOrTenant" class="form-input">
+                <option value="Proprietaire">Propriétaire</option>
+                <option value="Locataire">Locataire</option>
+            </select>
+        </div>
+        <div>
+            <label for="numberOfPeopleInTheHousehold">Nombre de personnes dans le foyer</label>
+            <input type="number" name="numberOfPeopleInTheHousehold" 
+            formControlName="numberOfPeopleInTheHousehold" 
+            class="form-input"
+            [ngClass]="{ 'has-error': 
+                    !projectDetailsStep2Form.get('numberOfPeopleInTheHousehold').valid 
+                    && projectDetailsStep2Form.get('numberOfPeopleInTheHousehold').touched
+                }">
+        </div>
+        <div>
+            <label for="householdIcome">Les revenus du foyer (entre 10k et 100k)</label>
+            <input type="text" name="householdIcome" formControlName="householdIcome" 
+            class="form-input" 
+            [ngClass]="{ 'has-error': 
+                    !projectDetailsStep2Form.get('householdIcome').valid && projectDetailsStep2Form.get('householdIcome').touched
+                }">
+        </div>
+        <div>
+            <label for="propertyArea">La surface du bien (m2)</label>
+            <input 
+                type="text" 
+                name="propertyArea" 
+                formControlName="propertyArea" 
+                class="form-input" [ngClass]="{ 'has-error': 
+                    !projectDetailsStep2Form.get('propertyArea').valid && projectDetailsStep2Form.get('propertyArea').touched
+                }">
+        </div>
+        <div>
+            <input 
+                type="submit" 
+                value="Suivant"
+                [disabled]="!projectDetailsStep2Form.valid" 
+                [ngClass]="{
+                 'btn-primary': projectDetailsStep2Form.valid,
+                 'btn-disable': !projectDetailsStep2Form.valid
+            }"> 
+       </div>
+    </form>
+</ng-container>

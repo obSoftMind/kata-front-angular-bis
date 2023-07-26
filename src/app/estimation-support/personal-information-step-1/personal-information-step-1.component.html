@@ -1,0 +1,84 @@
+<ng-container>
+    <form 
+        [formGroup]="personalInformationStep1Form" 
+        (ngSubmit)="onSubmitUserInformation()"
+        class="personal-Information-form">
+        
+        <div>
+            <label for="civility">Civilité</label>
+            <select 
+                name="civility" 
+                id="civility" 
+                formControlName="civility"
+                class="form-input">
+                <option value="Madame">Madame</option>
+                <option value="Monsieur">Monsieur</option>
+            </select>
+        </div>
+        <div>
+            <label for="name">Nom</label>
+            <input 
+                type="text" 
+                name="name" 
+                formControlName="name" 
+                placeholder="Saisir Nom"
+                class="form-input"
+                [ngClass]="{
+                    'has-error': 
+                    !personalInformationStep1Form.get('name').valid && personalInformationStep1Form.get('name').touched
+                }">
+        </div>
+        <div>
+            <label for="firstName">Prénom</label>
+            <input 
+                type="text" 
+                name="firstName" 
+                formControlName="firstName"
+                placeholder="Saisir Prénom"
+                class="form-input" 
+                [ngClass]="{
+                    'has-error': 
+                    !personalInformationStep1Form.get('firstName').valid && personalInformationStep1Form.get('firstName').touched
+                }">
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input 
+                type="email" 
+                name="email" 
+                formControlName="email"
+                placeholder="Saisir Email"
+                class="form-input" 
+                [ngClass]="{
+                    'has-error': 
+                    !personalInformationStep1Form.get('email').valid && personalInformationStep1Form.get('email').touched
+                }">
+        </div>
+        <div>
+            <label for="phonenumber">Téléphone</label>
+            <input 
+                type="text" 
+                name="phonenumber" 
+                formControlName="phonenumber"
+                placeholder="Saisir Téléphone"
+                maxlength="10"
+                class="form-input"
+                [ngClass]="{
+                    'has-error': 
+                    !personalInformationStep1Form.get('phonenumber').valid && personalInformationStep1Form.get('phonenumber').touched
+                }">
+        </div>
+       <div>
+            <input 
+                type="submit" 
+                value="Suivant"
+                [disabled]="!personalInformationStep1Form.valid" 
+                [ngClass]="{
+                 'btn-primary': personalInformationStep1Form.valid,
+                 'btn-disable': !personalInformationStep1Form.valid
+            }"> 
+       </div>
+      
+    </form>
+</ng-container>
+
