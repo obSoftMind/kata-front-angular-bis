@@ -20,36 +20,40 @@ import { MatStepperModule } from "@angular/material/stepper";
 import { MatTableModule } from "@angular/material/table";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatToolbarModule } from "@angular/material/toolbar";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatFormFieldModule } from '@angular/material/form-field';
 
-
+const MaterialComponents = [
+    MatMenuModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatTabsModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatStepperModule,
+    MatProgressBarModule,
+    MatFormFieldModule
+]
 @NgModule({
-    imports : [
-        BrowserAnimationsModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatIconModule,
-        MatCardModule,
-        MatTabsModule,
-        MatSidenavModule,
-        MatListModule,
-        MatToolbarModule,
-        MatInputModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatProgressSpinnerModule,
-        MatDialogModule,
-        MatSelectModule,
-        MatDatepickerModule,
-        MatNativeDateModule,
-        MatRadioModule,
-        MatCheckboxModule,
-        MatStepperModule,
-        MatProgressBarModule, 
+    imports: [
+        MaterialComponents
     ],
-    exports:[AppMaterialModule]
+    exports :[
+        ...MaterialComponents
+    ]
 })
-export class AppMaterialModule {
+export class SharedModule {
 
 }
