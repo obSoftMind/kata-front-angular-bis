@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RootStoreModule } from './root-store/root-store.module';
-import { EstimationSupportModule } from './estimation-support/estimation-support.module';
+import { AppMaterialModule } from './app-material.module';
 
 @NgModule({
   declarations: [
@@ -15,9 +15,9 @@ import { EstimationSupportModule } from './estimation-support/estimation-support
     CommonModule,
     AppRoutingModule,
     RootStoreModule,
-    EstimationSupportModule
+    AppMaterialModule
   ],
   bootstrap: [AppComponent],
-  
+
 })
 export class AppModule { }
