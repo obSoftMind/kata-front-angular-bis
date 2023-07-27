@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # kata-front-angular
 Test Technique (Effy)
  
@@ -36,3 +37,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
+=======
+# kata-front-angular-bis
+Utilisation d'un mat-horizontal-stepper plus pratique pour gérer la gestion des formulaires et le routage
+>>>>>>> 8028f202eb8c303054b57a7c149cf04143a03254
