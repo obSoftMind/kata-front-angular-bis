@@ -1,7 +1,6 @@
 <ng-container>
     <form 
         [formGroup]="projectDetailsStep2Form" 
-        (ngSubmit)="onSubmitUserInfoProject()"
         class="project-details-form">
         <div>
             <label for="ownerOrTenant"> Propriétaire ou locataire</label>
@@ -38,15 +37,5 @@
                     !projectDetailsStep2Form.get('propertyArea').valid && projectDetailsStep2Form.get('propertyArea').touched
                 }">
         </div>
-        <div>
-            <input 
-                type="submit" 
-                value="Suivant"
-                [disabled]="!projectDetailsStep2Form.valid" 
-                [ngClass]="{
-                 'btn-primary': projectDetailsStep2Form.valid,
-                 'btn-disable': !projectDetailsStep2Form.valid
-            }"> 
-       </div>
     </form>
 </ng-container>

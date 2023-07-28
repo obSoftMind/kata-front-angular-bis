@@ -1,7 +1,14 @@
-.mat-stepper-horizontal {
-    margin-top: 8px;
+@import '../../styles.scss';
+.data-form {
+    max-width: 80rem;
+    @include absCenter;
+}
+
+.stepper-buttons {
+    margin-top: 10px;
   }
   
-  .mat-mdc-form-field {
-    margin-top: 16px;
+  .stepper-buttons button{
+    margin-right: 5px;
   }
+  

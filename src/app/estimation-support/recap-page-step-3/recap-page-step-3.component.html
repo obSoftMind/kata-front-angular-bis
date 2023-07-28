@@ -1,9 +1,10 @@
 <div class="iligible" *ngIf="isIligible$ | async; else notIligible">
     <p>Merci {{(user$ | async)?.civility}} {{(user$ | async )?.name}} {{(user$ | async )?.firstName}}</p>
-    <p>félicitations ! vous êtes
+    <br>
+    <p>Félicitations ! vous êtes
         éligibilité à notre programme d’aides et d’accompagnement</p>
-    
-    <p>votre estimation est de {{(amount$ | async) | currency:'EUR':true }}</p>
+    <br>
+    <p>Votre estimation est de {{(amount$ | async) | currency:'EUR':true }}</p>
 </div>
 <ng-template #notIligible>
     <div class="not-iligible">

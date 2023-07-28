@@ -1,7 +1,6 @@
 <ng-container>
     <form 
         [formGroup]="personalInformationStep1Form" 
-        (ngSubmit)="onSubmitUserInformation()"
         class="personal-Information-form">
         
         <div>
@@ -68,16 +67,6 @@
                     !personalInformationStep1Form.get('phonenumber').valid && personalInformationStep1Form.get('phonenumber').touched
                 }">
         </div>
-       <div>
-            <input 
-                type="submit" 
-                value="Suivant"
-                [disabled]="!personalInformationStep1Form.valid" 
-                [ngClass]="{
-                 'btn-primary': personalInformationStep1Form.valid,
-                 'btn-disable': !personalInformationStep1Form.valid
-            }"> 
-       </div>
       
     </form>
 </ng-container>

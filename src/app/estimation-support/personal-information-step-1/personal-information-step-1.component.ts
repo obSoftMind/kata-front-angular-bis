@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
-import { NonNullableFormBuilder, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import * as fromEstimationSupport from '../../root-store/estimation-support-store/index';
 import { Patterns } from '../../common/patterns.const';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'personal-information-step-1',
   templateUrl: './personal-information-step-1.component.html',
   styleUrls: ['./personal-information-step-1.component.scss']
 })
-export class PersonalInformationStep1Component {
+export class PersonalInformationStep1Component implements OnInit{
 
  
   emailPattern = Patterns.emailPattern;
@@ -26,23 +27,28 @@ export class PersonalInformationStep1Component {
     }],
     phonenumber: ['', Validators.required]
   })
-  constructor(private fb: NonNullableFormBuilder, private readonly store: Store<fromEstimationSupport.EstimationSupportState>) { }
+  constructor(private fb: FormBuilder, private readonly store: Store<fromEstimationSupport.EstimationSupportState>) { }
 
-  onSubmitUserInformation() {
-    const civility = this.personalInformationStep1Form.value.civility;
-    const name = this.personalInformationStep1Form.value.name
-    const firstName = this.personalInformationStep1Form.value.firstName
-    const email = this.personalInformationStep1Form.value.email
-    const phonenumber = this.personalInformationStep1Form.value.phonenumber
+  ngOnInit(): void {
 
-    this.store.dispatch(fromEstimationSupport.actions.SAVE_PERSONAL_INFORMATION(
-      {
-        civility,
-        name,
-        firstName,
-        email,
-        phonenumber
-      }))
-  }
-  
+    
+    this.personalInformationStep1Form.valueChanges
+    .pipe(
+      filter(() => this.personalInformationStep1Form.valid)
+    ).subscribe( () => {
+      const civility = this.personalInformationStep1Form.value.civility;
+      const name = this.personalInformationStep1Form.value.name
+      const firstName = this.personalInformationStep1Form.value.firstName
+      const email = this.personalInformationStep1Form.value.email
+      const phonenumber = this.personalInformationStep1Form.value.phonenumber
+      this.store.dispatch(fromEstimationSupport.actions.SAVE_PERSONAL_INFORMATION(
+        {
+          civility,
+          name,
+          firstName,
+          email,
+          phonenumber
+        }))
+    })
+  } 
 }
